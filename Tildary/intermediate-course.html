@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ортаңғы деңгей | Tildary</title>
+    <link rel="stylesheet" href="intermediate-course.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="intermediate.js" defer></script>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="container-fluid fixed-top py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="profile.html" class="btn btn-outline-dark">🔙 Профильге өту</a>
+            <h3 class="m-0"> Ортаңғы деңгей</h3>
+        </div>
+    </header>
+
+    <!-- Основной контейнер -->
+    <div class="container " id="container">
+        <div class="row d-flex ">
+            <!-- Асайд (Левый блок) -->
+            <!-- Асайд (Левый блок) -->
+<div class="col-md-4">
+<aside class=" p-4 rounded shadow" id="courseSidebar">
+    <h4 class="text-center">📖 Күн сөздігі</h4>
+
+    <!-- Карусель словаря (оставляем как раньше) -->
+    <div id="wordCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card p-3 text-center">
+                    <h5 class="word-title">Сөз 1</h5>
+                    <p class="word-meaning">Мағынасы 1</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card p-3 text-center">
+                    <h5 class="word-title">Сөз 2</h5>
+                    <p class="word-meaning">Мағынасы 2</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#wordCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#wordCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <hr>
+
+    <h5>📅 Күндер мен тапсырмалар</h5>
+                    <ul class="list-group" id="courseDays">
+                        <li class="list-group-item"><a href="#lesson-1" class="day-link">1-күн: Қыз Жібек пен Төлеген</a></li>
+                        <li class="list-group-item"><a href="#lesson-2" class="day-link">2-күн: Батыр Баян</a></li>
+                        <li class="list-group-item"><a href="#lesson-3" class="day-link">3-күн: Қамар сұлу</a></li>
+                        <li class="list-group-item"><a href="#lesson-4" class="day-link">4-күн: Көксерек</a></li>
+                        <li class="list-group-item"><a href="#lesson-5" class="day-link">5-күн: Абай жолы</a></li>
+                        <li class="list-group-item"><a href="#lesson-6" class="day-link">6-күн: Сырлы там</a></li>
+                        <li class="list-group-item"><a href="#lesson-7" class="day-link">7-күн: Оян, қазақ!</a></li>
+                    </ul>
+    <!-- Кнопка перехода на следующую неделю -->
+<hr>
+<div class="text-center mt-3">
+    <button class="btn btn-outline-dark btn-lg"> Перейти на следующую неделю</button>
+</div>
+
+</aside>
+</div>
+
+
+ <!-- Контент (Правый блок) -->
+ <div class="col-md-8">
+
+    <main class=" p-4 rounded shadow" id="lessonContent">
+    
+    <!-- 🔸 День 1 -->
+        <div class="lesson-container day " id="lesson-1">
+            <h3>1-күн: Қыз Жібек пен Төлеген</h3>
+
+            <!-- 🔹 Видеоурок -->
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="books/Қыз-Жібек.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Бүгінгі шығарма
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day1">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day1">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day1">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day1">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day1">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+
+        <!-- 🔹 Жазбаша тапсырма -->
+        <div class="task-container mt-4" id="writing-task-day1">
+            <h4>✍️ Өз ойыңызды жазыңыз (кемінде 75 сөз):</h4>
+            <textarea id="user-text-day1" class="form-control" rows="5" placeholder="Ойыңызды осында жазыңыз..."></textarea>
+            <button class="btn btn-primary mt-3 check-writing-btn" data-day="day1">✅ Тексеру</button>
+            <p id="writing-result-day1" class="mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 Күнді аяқтау нәтижесі -->
+        <div class="day-final-result mt-4" id="final-result-day1">
+            <button class="btn btn-warning check-day-btn" data-day="day1">📌 Күнді аяқтап, тексеру</button>
+            <p id="day-unlock-message-day1" class="unlock-message fw-bold mt-3"></p>
+        </div>
+
+
+
+
+        </div>
+
+        <!-- 🔸 День 2 -->
+        <div class="lesson-container day locked" id="lesson-2" style="display: none;">
+            <h3>2-күн: Батыр Баян</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Бүгінгі шығарма
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day2">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day2">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day2">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day2">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day2">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+
+    
+        
+
+                
+            <p id="day-unlock-message-day2" class="unlock-message fw-bold mt-3"></p>
+
+
+
+        </div>
+
+
+        <!-- 🔸 День 3 -->
+        <div class="lesson-container day locked" id="lesson-3" style="display: none;">
+            <h3>3-күн: Қамар сұлу</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Бүгінгі шығарма
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day3">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day3">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day3">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day3">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day3">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+
+            
+
+            <p id="day-unlock-message-day3" class="fw-bold mt-3"></p>
+
+
+
+        </div>
+
+
+
+        <!-- 🔸 День 4 -->
+        <div class="lesson-container day locked" id="lesson-4" style="display: none;">
+            <h3>4-күн: Көксерек</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day4">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day4">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+
+            <div class="task-container mt-4" id="true-false-container-day4">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day4">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day4">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+        
+
+            
+
+            <p id="day-unlock-message-day4" class="fw-bold mt-3"></p>
+
+
+
+        </div>
+
+        <!-- 🔸 День 5 -->
+        <div class="lesson-container day locked" id="lesson-5" style="display: none;">
+            <h3>5-күн: Абай жолы</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day5">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day5">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day5">
+            <div class="task-container mt-4" id="true-false-container-day5">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day5">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day5">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+        </div>
+
+           
+            <p id="day-unlock-message-day5" class="fw-bold mt-3"></p>
+
+
+
+        </div>
+
+        <!-- 🔸 День 6 -->
+        <div class="lesson-container day locked" id="lesson-6" style="display: none;">
+            <h3>6-күн: Сырлы там</h3>
+        <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day6">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day6">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day6">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day6">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day6">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+
+           
+
+            <p id="day-unlock-message-day6" class="fw-bold mt-3"></p>
+
+
+
+        </div>
+
+        <!-- 🔸 День 7 -->
+        <div class="lesson-container day locked" id="lesson-7" style="display: none;">
+            <h3>7-күн: Оян, қазақ!</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            <!-- 🔹 Кнопка "Открыть конспект" -->
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!-- 🔹 Тест сұрақтары -->
+        <div class="task-container mt-4" id="task-container-day7">
+            <h4>📝 Тест сұрақтарына жауап беріңіз:</h4>
+            <div id="quiz-day7">
+                <p class="quiz-question fw-bold"></p>
+                <div class="quiz-options"></div>
+            </div>
+            <p class="task-result mt-2 fw-bold"></p>
+        </div>
+
+        <!-- 🔹 "Шын / Жалған" сұрақтары -->
+        <div class="task-container mt-4" id="true-false-container-day7">
+            <h4>🧐 "Шын" немесе "Жалған" деп белгілеңіз:</h4>
+            <div id="true-false-container-day7">
+                <h3>Шын / Жалған тесті</h3>
+                <div id="true-false-quiz-day7">
+                    <p class="true-false-question">Мұнда сұрақ шығады...</p>
+                    <button class="true-false-btn" data-answer="Шын">Шын</button>
+                    <button class="true-false-btn" data-answer="Жалған">Жалған</button>
+                </div>
+                <div class="true-false-result"></div>
+            </div>
+        </div>
+
+           
+            <p id="day-unlock-message-day7" class="fw-bold mt-3"></p>
+
+
+
+
+        </div>
+    </main>
+</div>
+
+<footer class="container-fluid " id="main-footer">
+        <div class="row container text-center">
+            <p class="mb-0">&copy; 2025 Tildary. Барлық құқықтар қорғалған.</p>
+                <div class="social-icons ">
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </ul>
+        </div>
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

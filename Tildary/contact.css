@@ -1,0 +1,302 @@
+/* Основные  у всех одно и тоже апхазпза */
+body {
+    font-family: 'Quicksand', serif;
+    color: #5C3B1E; /* Темно-коричневый  */
+    margin: 0;
+    padding: 0;
+    background-color: #F4E7D1 !important; /* Светлый бежевый фон */
+
+}
+
+/* Фон  */
+
+    /*background: url('ou.jpg') repeat;
+   
+/* Заголовки  */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #8B5E3C; /* коричневый */
+}
+/* Шапка */
+#main-header {
+    background: rgba(255, 255, 255, 0.1); /* Прозрачный белый */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Логотип */
+.logo-img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Навигация */
+.nav .nav-link {
+    color: #5C3B1E; /* Коричневый  */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav .nav-link:hover {
+    color: #A06A47 !important; /* Светло-коричневый  */
+}
+
+/* Кнопки */
+.btn-outline-dark,
+.btn-primary {
+    border-color: #8B5E3C !important;
+    color: #8B5E3C !important;
+}
+
+.btn-outline-dark:hover,
+.btn-primary:hover {
+    background-color: #A06A47 !important;
+    color: white !important;
+}
+
+
+/* Бургер-меню */
+.nav-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler i {
+    font-size: 1.5rem;
+    color: #8B5E3C;
+}
+
+.nav .nav-link {
+    display: block;
+    padding: 10px;
+}
+
+/* Мобильное меню */
+#mobileMenu {
+    background: rgba(244, 231, 209, 0.85) !important; /* Светло-бежевый   */
+    backdrop-filter: blur(10px);
+    padding: 80px 0 0 0;
+}
+
+#mobileMenu ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.btn-primary {
+    background-color: #8B5E3C !important;
+    border-color: #8B5E3C !important;
+    color: white !important;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #A06A47 !important;
+    border-color: #A06A47 !important;
+    transform: scale(1.05);
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #main-header {
+        background: #F4E7D1 !important; /* Бежевый  */
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+}
+
+/* Скрываем гамбургер на больших экранах */
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+
+/* Футер (Footer) */
+#main-footer {
+    background-color: #8B5E3C; /* Коричневый  */
+    color: #F4E7D1; /* Светло-бежевый  */
+    padding: 20px ;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#main-footer .footer-link {
+    color: #F4E7D1;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#main-footer .footer-link:hover {
+    color: #D9B99B; 
+}
+
+#main-footer .social-icons a {
+    color: #F4E7D1;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#main-footer .social-icons a:hover {
+    color: #D9B99B; /* Светлее  */
+}
+
+/* Основной контейнер страницы */
+main {
+    flex: 1;
+
+}
+
+#image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh; /* Полный экран */
+    z-index: -1; /* Уводим фон назад */
+}
+
+@media (max-width: 768px) {
+    #image {
+        height: 35vh; /* Уменьшаем высоту на мобильных */
+        object-fit: contain; /* Показывает всё изображение без обрезки */
+        padding: 40px 0 0 0;
+        margin: 0;
+    }
+}
+
+#scroll a {
+   text-decoration: none;
+   color: white !important;
+}
+
+
+/* === Заголовок страницы === */
+.contact-header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* === Контейнер контактов === */
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* === Карточки контактов === */
+.contact-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #8B5E3C; /* Коричневая полоса */
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === Иконки контактов === */
+.contact-icon {
+    font-size: 1.8rem;
+    color: #8B5E3C;
+    margin-right: 15px;
+}
+
+/* === Текст контактов === */
+.contact-info {
+    flex-grow: 1;
+}
+
+.contact-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.contact-details {
+    font-size: 1rem;
+    color: #6d4c41; /* Мягкий коричневый */
+}
+
+/* === Форма обратной связи === */
+.contact-form {
+    margin-top: 30px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d5b8a3;
+    border-radius: 5px;
+    background: #fef7f0;
+    color: #5a3e2b;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #8B5E3C;
+    box-shadow: 0 0 5px rgba(139, 94, 60, 0.5);
+}
+
+/* === Кнопка отправки === */
+.contact-btn {
+    background: #8B5E3C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #6d4c41;
+}
+
+/* === Адаптация для мобильных устройств === */
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-icon {
+        margin-bottom: 10px;
+    }
+}

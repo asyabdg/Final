@@ -1,0 +1,265 @@
+/* Основные  */
+body {
+    font-family: 'Quicksand', serif;
+    color: #5C3B1E; /* Темно-коричневый  */
+    margin: 0;
+    padding: 0;
+}
+
+/* Фон  */
+body {
+    background-color: rgba(214, 180, 92, 0.2) !important;  /* Основной бежевый фон */
+}
+
+/* Заголовки  */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #8B5E3C; /* коричневый */
+}
+/* Шапка */
+#main-header {
+    background: rgba(255, 255, 255, 0.1); /* Прозрачный белый */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Логотип */
+.logo-img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Навигация */
+.nav .nav-link {
+    color: #5C3B1E; /* Коричневый  */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav .nav-link:hover {
+    color: #A06A47 !important; /* Светло-коричневый  */
+}
+
+
+/* Кнопки */
+.btn-outline-dark,
+.btn-primary {
+    border-color: #8B5E3C !important;
+    color: #8B5E3C !important;
+}
+
+.btn-outline-dark:hover,
+.btn-primary:hover {
+    background-color: #A06A47 !important;
+    color: white !important;
+}
+
+
+
+.btn-primary {
+    background-color: #8B5E3C !important;
+    border-color: #8B5E3C !important;
+    color: white !important;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #A06A47 !important;
+    border-color: #A06A47 !important;
+    transform: scale(1.05);
+}
+
+
+.dropdown-menu {
+    background-color: #F4E7D1 !important;
+    border-color: #8B5E3C !important;
+    color: white !important;;
+}
+
+/* Стили для подсказок) */
+.tooltip {
+    --bs-tooltip-bg: #8B5E3C !important; /* Коричневый  */
+    --bs-tooltip-color: #F4E7D1 !important; /* Светло-бежевый  */
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #main-header {
+        background: #F4E7D1 !important; /* Бежевый  */
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+}
+
+/* Скрываем гамбургер на больших экранах */
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+
+/* Футер (Footer) */
+#main-footer {
+    background-color: #8B5E3C; /* Коричневый  */
+    color: #F4E7D1; /* Светло-бежевый  */
+    padding: 20px ;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#main-footer .footer-link {
+    color: #F4E7D1;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#main-footer .footer-link:hover {
+    color: #D9B99B; 
+}
+
+#main-footer .social-icons a {
+    color: #F4E7D1;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#main-footer .social-icons a:hover {
+    color: #D9B99B; /* Светлее  */
+}
+
+
+/* Модальное окно настроек */
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Кнопки */
+.btn-primary {
+    background-color: #8B5E3C !important;
+    border-color: #8B5E3C !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+
+/* Aside  */
+#userInfo {
+    background: #FAF3E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#userInfo h4, #userInfo h5 {
+    text-align: center;
+    font-weight: bold;
+    color: #8B5E3C;
+}
+
+#userInfo p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+
+/* Основной блок курса */
+#courseContainer {
+    background: #FFF8E1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Прогресс-бар */
+.progress {
+    height: 20px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    font-weight: bold;
+}
+
+/* Список уроков */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item.locked {
+    color: gray;
+    pointer-events: none;
+    background: #eee;
+}
+
+
+/* Карточки уроков */
+.lesson-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    margin-bottom: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Заблокированные карточки */
+.lesson-card.locked {
+    background: #f0f0f0;
+    color: gray;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Текст "Откроется после определения уровня" */
+.lesson-card.locked::after {
+    content: "🔒 Откроется после определения уровня";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #8B5E3C;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Кнопка "Перейти на следующую неделю" */
+#nextWeekBtn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+
+
+

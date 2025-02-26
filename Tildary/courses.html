@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tildary - Курсы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="courses.js" defer></script>
+</head>
+
+<body>
+    <!-- Шапка  -->
+    <header class="container-fluid fixed-top py-3" id="main-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+            <!-- Логотип -->
+            <a href="main.html" class="logo">
+                <img src="logo.png" alt="Tildary" class="logo-img">
+            </a>
+            
+            <!-- Меню навигации -->
+            <nav class="d-none d-md-flex">
+                <ul class="nav">
+                    <li class="nav-item"><a href="main.html" class="nav-link" data-bs-toggle="tooltip" title="Главная страница">Главная</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link" data-bs-toggle="tooltip" title="Наши курсы">Курсы</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link" data-bs-toggle="tooltip" title="Последние новости">Новости</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" data-bs-toggle="tooltip" title="Свяжитесь с нами">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Кнопки справа -->
+            <div class="d-flex align-items-center ">
+                <button id="lang-toggle" class="btn btn-outline-dark me-2" data-bs-toggle="tooltip" title="Переключение языка">Қаз / Рус</button>
+                <button id="userSection" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" >Личный кабинет</button>
+            </div>
+            
+            <!-- Бургер -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="bi bi-justify"></i></span>
+            </button>
+
+
+        </div>
+    </header>
+
+
+
+<!-- Модальное окно ВХОДА -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Вход в аккаунт</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </form>
+                <p class="mt-3 text-center">
+                    Нет аккаунта? <a href="#" id="showRegisterModal">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно РЕГИСТРАЦИИ -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="registerName" placeholder="Введите имя" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль (мин. 6 символов)" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+    <!-- адаптация  меню -->
+    <div class="collapse d-md-none" id="mobileMenu">
+        <ul class="nav flex-column text-center">
+            <li class="nav-item"><a href="main.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="courses.html" class="nav-link">Курсы</a></li>
+            <li class="nav-item"><a href="news.html" class="nav-link">Новости</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+        </ul>
+    </div>
+
+    
+ 
+
+<!-- Полноэкранное изображение на странице -->
+<img class="fixed-top" src="course.jpg"  id="image">
+
+
+<!-- Основная структура страницы "Курсы" -->
+<main class="courses-container">
+    <!-- Боковое меню (Aside) -->
+    <aside class="courses-sidebar">
+        <h2 class="m-4">Курсы</h2>
+        <ul class="course-list">
+            <li><a href="#course1">Казахский язык и  литература</a></li>
+            <ul class="course-list">
+            <li><a href="#A1">Начальный уровень</a></li>
+            <li><a href="#B1">Средний уровень</a></li>
+            <li><a href="#C1">Продвинутый уровень</a></li>
+        </ul>
+            <li class="placeholder">Современные технологии (Недоступно)</li>
+            <li class="placeholder">UX/UI дизайн (Недоступно)</li>
+            <li class="placeholder">UX/UI дизайн (Недоступно)</li>
+        </ul>
+    </aside>
+
+    <!-- Основное содержание курса -->
+
+    <section class="course-content" id="course1">
+        <h2>Казахский язык и  литература</h2>
+        <p>Изучение казахской литературы включает в себя знакомство с творчеством выдающихся писателей и поэтов, чьи произведения сыграли важную роль в формировании национальной идентичности и культуры Казахстана. Мы рассмотрим ключевые этапы развития литературы, начиная от устных народных эпосов и поэзии до современного литературного процесса. Курс охватывает влияние исторических событий и социальных изменений на творчество казахских авторов, а также их вклад в мировой культурный контекст. Особое внимание уделяется глубокому анализу произведений, выявлению литературных техник и художественных приёмов, используемых писателями. Понимание казахской литературы помогает раскрыть многогранную историю народа, его мировоззрение и традиции.</p>
+        
+        <!-- Список уровней с сворачиваемым содержимым -->
+        <div class="course-levels">
+            <details>
+                <summary id="A1">Начальный уровень</summary>
+                <p>Введение в казахскую литературу, знакомство с основными авторами и жанрами.</p>
+            </details>
+            <details>
+                <summary id="B1">Средний уровень</summary>
+                <p>Анализ произведений, изучение литературных приёмов, исторический контекст.</p>
+            </details>
+            <details>
+                <summary id="C1">Продвинутый уровень</summary>
+                <p>Глубокий анализ текстов, сравнение с мировой литературой, авторские стили.</p>
+            </details>
+        </div>
+        
+        <!-- Кнопка начала курса -->
+        <button class="start-course">Начать курс</button>
+    </section>
+
+</main>
+
+<button id="toggleSidebar" class="btn btn-primary d-md-none ">Меню</button>
+
+
+<button id="scroll" class="btn btn-primary"><a href="courses.html"><i class="bi bi-arrow-up"></i></a></button>
+
+     <footer class="container-fluid py-4" id="main-footer">
+        <div class="row container text-center">
+            <p class="mb-0">&copy; 2025 Tildary. Все права защищены.</p>
+                <div class="social-icons ">
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </ul>
+        </div>
+    </footer>
+    <!-- Будстрап -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс для начинающих | Tildary</title>
+    <link rel="stylesheet" href="beginner-course.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="beginner-course.js" defer></script>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="container-fluid fixed-top py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="profile.html" class="btn btn-outline-dark">🔙 В личный кабинет</a>
+            <h3 class="m-0"> Курс для начинающих</h3>
+        </div>
+    </header>
+
+    <!-- Основной контейнер -->
+    <div class="container " id="container">
+        <div class="row d-flex ">
+           
+<div class="col-md-4">
+<aside class=" p-4 rounded shadow" id="courseSidebar">
+    <h4 class="text-center">📖 Словарь дня</h4>
+
+    <!-- Карусель словаря (оставляем как раньше) -->
+    <div id="wordCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card p-3 text-center">
+                    <h5 class="word-title">Сөз 1</h5>
+                    <p class="word-meaning">Мағынасы 1</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card p-3 text-center">
+                    <h5 class="word-title">Сөз 2</h5>
+                    <p class="word-meaning">Мағынасы 2</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#wordCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#wordCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <hr>
+
+    <h5>📅 Дни и задания</h5>
+    <ul class="list-group" id="courseDays">
+        <li class="list-group-item"><a href="#lesson-1" class="day-link">День 1: Алфавит</a></li>
+        <li class="list-group-item"><a href="#lesson-2" class="day-link">День 2: Приветствие</a></li>
+        <li class="list-group-item"><a href="#lesson-3" class="day-link">День 3: Основные фразы</a></li>
+        <li class="list-group-item"><a href="#lesson-4" class="day-link">День 4: Диалоги</a></li>
+        <li class="list-group-item"><a href="#lesson-5" class="day-link">День 5: Грамматика</a></li>
+        <li class="list-group-item"><a href="#lesson-6" class="day-link">День 6: Культура общения</a></li>
+        <li class="list-group-item"><a href="#lesson-7" class="day-link">День 7: Итоговое задание</a></li>
+    </ul>
+
+<hr>
+<div class="text-center mt-3">
+    <button class="btn btn-outline-dark btn-lg"> Перейти на следующую неделю</button>
+</div>
+
+</aside>
+</div>
+
+
+
+ <div class="col-md-8">
+
+    <main class=" p-4 rounded shadow" id="lessonContent">
+    
+    <!--  День 1 -->
+        <div class="lesson-container" id="lesson-1">
+            <h3>День 1: Алфавит</h3>
+
+            
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/1i5BT-3VMmpr1DOz22fdlGwzWteP2TlP1/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!--  Задание 1 -->
+            <div id="task1-container-day1" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day1">1</span>/5):</h4>
+            <p id="kazakh-word-day1" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day1" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day1">Проверить</button>
+            <p id="task1-result-day1" class="mt-2"></p>
+            <p id="final-score-task1-day1" class="fw-bold mt-3"></p>
+        </div>
+
+            <!-- Задание 2 -->
+            <div id="task2-container-day1" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day1">
+                    <!-- Вопросы будут подгружаться автоматически -->
+                </div>
+
+                <div id="quiz-day1">
+                    <p class="quiz-question fw-bold"></p>
+                    <div class="quiz-options"></div>
+                </div>
+                <p class="task-result mt-2 fw-bold"></p>
+
+               
+                <p id="task2-result-day1" class="mt-2"></p>
+            </div>
+
+            <!--  Задание 3 -->
+            <div id="task3-container-day1" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day1" class="fw-bold">...</p>
+                <textarea id="user-poem-day1" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day1">Проверить</button>
+                <p id="task3-result-day1" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day1" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-2" data-day="2" >
+                    <a href="#lesson-2">Завершить день и открыть следующий</a> 
+                </button>
+            </div>
+
+
+
+
+        </div>
+
+        <!--  День 2 -->
+        <div class="lesson-container" id="lesson-2" style="display: none;">
+            <h3>День 2: Приветствие</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/1i5BT-3VMmpr1DOz22fdlGwzWteP2TlP1/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+        
+
+              
+        <div id="task1-container-day2" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day2">1</span>/5):</h4>
+            <p id="kazakh-word-day2" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day2" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day2">Проверить</button>
+            <p id="task1-result-day2" class="mt-2"></p>
+            <p id="final-score-task1-day2" class="fw-bold mt-3"></p>
+        </div>
+
+        <!--  Задание 2-->
+            <div id="task2-container-day2" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day2">
+                   юю
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day2">Проверить тест</button>
+                <p id="task2-result-day2" class="mt-2"></p>
+            </div>
+
+            <!--  Задание 3 -->
+            <div id="task3-container-day2" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day2" class="fw-bold">...</p>
+                <textarea id="user-poem-day2" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day2">Проверить</button>
+                <p id="task3-result-day2" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day2" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-2" data-day="2" >
+                    <a href="lesson-3">Завершить день и открыть следующий</a> 
+                </button>
+            </div>
+
+
+
+        </div>
+
+
+        <!--  День 3 -->
+        <div class="lesson-container" id="lesson-3" style="display: none;">
+            <h3>День 3: Основные фразы</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+                                                                                        <!-- МЫНДА ӘЛІ РЕТТЕТІРУ КЕРЕК  -->
+            <!--  Задание 1-->
+        <div id="task1-container-day3" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day3">1</span>/5):</h4>
+            <p id="kazakh-word-day3" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day3" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day3">Проверить</button>
+            <p id="task1-result-day3" class="mt-2"></p>
+            <p id="final-score-task1-day3" class="fw-bold mt-3"></p>
+        </div>
+
+        <!--  Задание 2-->
+            <div id="task2-container-day3" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day3">
+                    <!-- Вопросы будут подгружаться автоматически -->
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day3">Проверить тест</button>
+                <p id="task2-result-day3" class="mt-2"></p>
+            </div>
+
+            <!--  Задание 3-->
+            <div id="task3-container-day3" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day3" class="fw-bold">...</p>
+                <textarea id="user-poem-day3" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day3">Проверить</button>
+                <p id="task3-result-day3" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day3" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-3" data-day="3" >
+                    ✅ Завершить день и открыть следующий
+                </button>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!--  День 4 -->
+        <div class="lesson-container" id="lesson-4" style="display: none;">
+            <h3>День 4: Диалоги</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+           
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+         <!--  Задание 1-->
+        <div id="task1-container-day4" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day4">1</span>/5):</h4>
+            <p id="kazakh-word-day4" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day4" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day4">Проверить</button>
+            <p id="task1-result-day4" class="mt-2"></p>
+            <p id="final-score-task1-day4" class="fw-bold mt-3"></p>
+        </div>
+
+       <!--  Задание 2-->
+            <div id="task2-container-day4" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day4">
+                  
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day4">Проверить тест</button>
+                <p id="task2-result-day4" class="mt-2"></p>
+            </div>
+
+           
+            <div id="task3-container-day4" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day4" class="fw-bold">...</p>
+                <textarea id="user-poem-day4" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day4">Проверить</button>
+                <p id="task3-result-day4" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day4" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-4" data-day="4" style="display: none;">
+                    ✅ Завершить день и открыть следующий
+                </button>
+            </div>
+
+
+
+        </div>
+
+        <!--  День 5 -->
+        <div class="lesson-container" id="lesson-5" style="display: none;">
+            <h3>День 5: Грамматика</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+           
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+          <!--  Задание 1-->
+        <div id="task1-container-day5" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day5">1</span>/5):</h4>
+            <p id="kazakh-word-day5" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day5" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day5">Проверить</button>
+            <p id="task1-result-day5" class="mt-2"></p>
+            <p id="final-score-task1-day5" class="fw-bold mt-3"></p>
+        </div>
+
+        <!--  Задание 2-->
+            <div id="task2-container-day5" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day5">
+                    <!-- Вопросы будут подгружаться автоматически -->
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day5">Проверить тест</button>
+                <p id="task2-result-day5" class="mt-2"></p>
+            </div>
+
+           <!--  Задание 3-->
+            <div id="task3-container-day5" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day5" class="fw-bold">...</p>
+                <textarea id="user-poem-day5" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day5">Проверить</button>
+                <p id="task3-result-day5" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day5" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-5" data-day="5" style="display: none;">
+                    ✅ Завершить день и открыть следующий
+                </button>
+            </div>
+
+
+
+        </div>
+
+        <!--  День 6 -->
+        <div class="lesson-container" id="lesson-6" style="display: none;">
+            <h3>День 6: Культура общение</h3>
+        <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+         
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!--  Задание 1-->
+        <div id="task1-container-day6" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day6">1</span>/5):</h4>
+            <p id="kazakh-word-day6" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day6" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day6">Проверить</button>
+            <p id="task1-result-day6" class="mt-2"></p>
+            <p id="final-score-task1-day6" class="fw-bold mt-3"></p>
+        </div>
+
+       <!--  Задание 2-->
+            <div id="task2-container-day6" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day6">
+                    <!-- Вопросы будут подгружаться автоматически -->
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day6">Проверить тест</button>
+                <p id="task2-result-day6" class="mt-2"></p>
+            </div>
+
+            <!--  Задание 3-->
+            <div id="task3-container-day6" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day6" class="fw-bold">...</p>
+                <textarea id="user-poem-day6" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day6">Проверить</button>
+                <p id="task3-result-day6" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day6" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-6" data-day="6" style="display: none;">
+                    ✅ Завершить день и открыть следующий
+                </button>
+            </div>
+
+
+
+        </div>
+
+        <!--  День 7 -->
+        <div class="lesson-container" id="lesson-7" style="display: none;">
+            <h3>День 7: Итоговое задание</h3>
+            <div class="lesson-video">
+                <iframe src="https://drive.google.com/file/d/ИДЕНТИФИКАТОР/preview" width="100%" height="400" allow="autoplay"></iframe>
+            </div>
+
+            
+            <a href="profile.pdf" class="btn btn-outline-dark mt-3" >
+                📄 Открыть конспект
+            </a>
+
+            <!--  Задание 1-->
+        <div id="task1-container-day7" class="mt-4">
+            <h4>Переведи слово (<span id="word-counter-day7">1</span>/5):</h4>
+            <p id="kazakh-word-day7" class="fs-4 fw-bold">...</p>
+            <input type="text" id="user-answer-day7" class="form-control mt-2" placeholder="Введите перевод">
+            <button class="btn btn-primary mt-2" id="submitTask1-day7">Проверить</button>
+            <p id="task1-result-day7" class="mt-2"></p>
+            <p id="final-score-task1-day7" class="fw-bold mt-3"></p>
+        </div>
+
+        <!--  Задание 2-->
+            <div id="task2-container-day7" class="mt-4">
+                <h4>Выберите правильные ответы:</h4>
+
+                <div id="quiz-day7">
+                    <!-- Вопросы будут подгружаться автоматически -->
+                </div>
+
+                <button class="btn btn-primary mt-3" id="submitTask2-day7">Проверить тест</button>
+                <p id="task2-result-day7" class="mt-2"></p>
+            </div>
+
+            <!--  Задание 3-->
+            <div id="task3-container-day7" class="mt-4">
+                <h4>Перепишите стихотворение без ошибок:</h4>
+                <p id="poem-day7" class="fw-bold">...</p>
+                <textarea id="user-poem-day7" class="form-control mt-2" rows="4" placeholder="Введите стихотворение..."></textarea>
+                <button class="btn btn-primary mt-2" id="submitTask3-day7">Проверить</button>
+                <p id="task3-result-day7" class="mt-2"></p>
+            </div>
+
+            <p id="day-unlock-message-day7" class="fw-bold mt-3"></p>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-success unlock-next-day" id="unlock-day-7" data-day="7" style="display: none;">
+                    ✅ Завершить день и открыть следующий
+                </button>
+            </div>
+
+
+
+
+        </div>
+    </main>
+</div>
+
+<footer class="container-fluid " id="main-footer">
+        <div class="row container text-center">
+            <p class="mb-0">&copy; 2025 Tildary. Все права защищены.</p>
+                <div class="social-icons ">
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </ul>
+        </div>
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

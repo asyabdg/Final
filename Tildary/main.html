@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tildary - Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <!-- Шапка  -->
+    <header class="container-fluid fixed-top py-3" id="main-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+            <!-- Логотип -->
+            <a href="main.html" class="logo">
+                <img src="logo.png" alt="Tildary" class="logo-img">
+            </a>
+            
+            <!-- Меню навигации -->
+            <nav class="d-none d-md-flex">
+                <ul class="nav">
+                    <li class="nav-item"><a href="main.html" class="nav-link" data-bs-toggle="tooltip" title="Главная страница">Главная</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link" data-bs-toggle="tooltip" title="Наши курсы">Курсы</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link" data-bs-toggle="tooltip" title="Последние новости">Новости</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" data-bs-toggle="tooltip" title="Свяжитесь с нами">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Кнопки справа -->
+            <div class="d-flex align-items-center ">
+                <button id="lang-toggle" class="btn btn-outline-dark me-2" data-bs-toggle="tooltip" title="Переключение языка">Қаз / Рус</button>
+                <button id="userSection" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" >Личный кабинет</button>
+            </div>
+            
+            <!-- Бургер -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="bi bi-justify"></i></span>
+            </button>
+
+
+        </div>
+    </header>
+
+    <button id="scroll" class="btn btn-primary"><a href="main.html"><i class="bi bi-arrow-up"></i></a></button>
+
+
+
+<!-- Модальное окно ВХОДА -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Вход в аккаунт</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </form>
+                <p class="mt-3 text-center">
+                    Нет аккаунта? <a href="#" id="showRegisterModal">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно РЕГИСТРАЦИИ -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="registerName" placeholder="Введите имя" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль (мин. 6 символов)" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+    <!-- адаптация  меню -->
+    <div class="collapse d-md-none" id="mobileMenu">
+        <ul class="nav flex-column text-center">
+            <li class="nav-item"><a href="main.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="courses.html" class="nav-link">Курсы</a></li>
+            <li class="nav-item"><a href="news.html" class="nav-link">Новости</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+        </ul>
+    </div>
+
+    
+ 
+
+<!-- Полноэкранное изображение на странице -->
+<img src="hero.jpg"  id="image">
+
+<!-- Кнопки для асайда при адаптации -->
+<div class="row">  
+    <button id="toggleLeftSidebar" class="btn btn-outline-dark d-md-none col-12 mt-3 py-3" >📚 Бесплатные книги</button>
+    <button id="toggleRightSidebar" class="btn btn-outline-dark d-md-none col-12 mt-3 py-3" >📝 Отзывы</button>
+</div>
+
+
+<!-- Главный контейнер -->
+<div class="container mt-5">
+    <div class="row">
+<!-- Асайд -->
+<aside class="col-md-3 " id="leftSidebar" >
+    <h5>🔍 Поиск книг</h5>
+    <input type="text" id="bookSearch" class="form-control mb-3" placeholder="Введите название...">
+    
+    <h5>📚 Бесплатные книги</h5>
+    <ul class="list-group overflow-auto" id="freeBooksList" style="max-height: 500px;">
+        <li class="list-group-item book-item">
+            <a href="books/ Өмір мектебі (Сәбит Мұқанов).pdf" target="_blank"> Өмір мектебі (Сәбит Мұқанов)</a>
+        </li>
+        <li class="list-group-item book-item">
+            <a href="books/ Жапандағы жалғыз (Cәкен Жүнісов).pdf" target="_blank"> Жапандағы жалғыз (Cәкен Жүнісов)</a>
+        </li>
+        <li class="list-group-item book-item">
+            <a href="books/Адамзаттың Асыл Тәжі.pdf" target="_blank">Адамзаттың Асыл Тәжі</a>
+        </li>
+        <li class="list-group-item book-item">
+            <a href="books/Аққан жұлдыз (Сәбит Мұқанов).pdf" target="_blank">Аққан жұлдыз (Сәбит Мұқанов)</a>
+        </li>
+        <li class="list-group-item book-item">
+            <a href="books/Бір атаның балалары (Мұхтар Мағауин).pdf" target="_blank">Бір атаның балалары (Мұхтар Мағауин)</a>
+        </li>
+        <li class="list-group-item book-item">
+            <a href="books/Сайын Мұратбеков (Жабайы алма).pdf" target="_blank">Сайын Мұратбеков (Жабайы алма)</a>
+        </li>
+    </ul>
+</aside>
+
+
+<!-- Основная часть -->
+<main class="col-md-6">
+
+
+<!-- О проекте -->
+<section id="about" class="container ">
+    <div class="row">
+     
+        <div class="col-md-6">
+            <h2 class="section-title">📖 Кто мы?</h2>
+            <p class="section-text">
+                Tildary – это образовательная платформа, созданная для изучения и популяризации казахского языка и литературы.
+                Здесь вы найдёте бесплатные книги, обучающие материалы и сможете углубить знания о культуре Казахстана.
+            </p>
+            <p class="section-text">
+                Наша цель — объединить традиционные знания с современными методами обучения, делая изучение казахского языка доступным и увлекательным.
+            </p>
+        </div>
+
+        
+        <div class="col-md-6">
+            <h2 class="section-title">🎓 О курсах</h2>
+            <p class="section-text">
+                Мы предлагаем курсы по казахскому языку и литературе для разных уровней: от начинающих до свободного владения.
+                Также доступны программы по изучению традиционной казахской поэзии, истории языка и национальной культуры.
+            </p>
+            <p class="section-text">
+                Наши курсы помогают не только освоить язык, но и глубже понять его культурное наследие, традиции и значимость в современном мире.
+            </p>
+            <a href="courses.html" class="btn btn-primary mt-3">Изучить курсы</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+   <!-- Преимущества -->
+<section id="advantages" class="container mt-5">
+    <h2 class="section-title text-center">Почему выбрать Tildary?</h2>
+    <div class="row text-center mt-4">
+        
+        <div class="col-md-6">
+            <div class="advantage-item">
+                <i class="bi bi-globe icon"></i>
+                <h4>1. Доступность</h4>
+                <p>Обучение и материалы доступны онлайн в любое время и из любой точки мира.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="advantage-item">
+                <i class="bi bi-book icon"></i>
+                <h4>2. Большая библиотека</h4>
+                <p>Коллекция классических и современных книг, доступных на казахском языке.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-4">
+            <div class="advantage-item">
+                <i class="bi bi-lightbulb icon"></i>
+                <h4>3. Нестандартная система</h4>
+                <p>Уникальный подход к обучению, основанный на интерактивных методиках.</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div class="advantage-item">
+                <i class="bi bi-people icon"></i>
+                <h4>4. Развивающая среда</h4>
+                <p>Сообщество единомышленников, образовательные проекты.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Частые вопросы -->
+<section id="faq" class="container mt-5 ">
+    <h2 class="section-title text-center">❓ Частые вопросы</h2>
+    <div class="accordion" id="faqAccordion">
+        <!-- Вопрос 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                    Как зарегистрироваться на платформе?
+                </button>
+            </h2>
+            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Для регистрации необходимо заполнить форму на главной странице, указав имя, email и пароль.
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading2">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                    Как начать курс?
+                </button>
+            </h2>
+            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    После регистрации выберите курс, который вас интересует, и нажмите кнопку "Записаться". Вы получите доступ к материалам.
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading3">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                    Как получить доступ к бесплатным книгам?
+                </button>
+            </h2>
+            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Бесплатные книги доступны в разделе "Библиотека". Простой переход по ссылке даст вам доступ к нужным материалам.
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading4">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                    Нужно ли платить за курсы?
+                </button>
+            </h2>
+            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Некоторые курсы являются бесплатными, другие могут требовать небольшой взнос для доступа к продвинутым материалам.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+        <!-- Правый асайд  -->
+
+        <!-- Отзывы -->
+<aside class="col-md-3 " id="rightSidebar">
+    <h5>📜 Бүгінгі қанатты сөз</h5>
+    <blockquote id="quoteDisplay">"Өзіңе сен, жеңеріңе сен!"</blockquote>
+
+    <h5>📝 Отзывы</h5>
+    <div id="reviews">
+        <!-- отзывы -->
+    </div>
+
+    <!-- Форма для отзыва -->
+    <form id="reviewForm">
+        <input type="text" id="reviewText" class="form-control" placeholder="Напишите отзыв..." required>
+        <div class="rating mt-2">
+            <span class="star" data-value="1">⭐</span>
+            <span class="star" data-value="2">⭐</span>
+            <span class="star" data-value="3">⭐</span>
+            <span class="star" data-value="4">⭐</span>
+            <span class="star" data-value="5">⭐</span>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Оставить отзыв</button>
+    </form>
+</aside>
+
+    </div>
+</div>
+
+
+
+     <footer class="container-fluid py-4" id="main-footer">
+        <div class="row container text-center">
+            <p class="mb-0">&copy; 2025 Tildary. Все права защищены.</p>
+                <div class="social-icons ">
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="me-3" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </ul>
+        </div>
+    </footer>
+    <!-- Будстрап -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
